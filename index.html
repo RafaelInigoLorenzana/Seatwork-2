@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafael Inigo Puzon Lorenzana Calculator</title>
+<h1>Tatsumaki's esper calculator<br>Enter your x and y to get your <br>answers</h1>
+<style>
+  body {
+    font-family: monospace;, sans-serif;
+    background-color: #; /* Gray backdrop */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+  }
+  .calculator {
+    background-color: grey;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  button {
+    width: 75%;
+    padding: 10px;
+    background-color: #E0E1DF;
+    color: black;
+    border: solid;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #E0E1DF;
+  }
+</style>
+<img src="https://64.media.tumblr.com/cc99e22e68e79428a3fc9a33d9f08cc0/94b2c95c96b95fe1-19/s1280x1920/4fb2f4b837105cfa08a9386ffc214a26d9d1dc8e.jpg" width="300" height="300">
+</head>
+<body>
+<div class="calculator">
+  <input type="number" id="x" placeholder="Enter value for x">
+  <input type="number" id="y" placeholder="Enter value for y">
+  <button onclick="calculate()">Calculate</button>
+  <div id="result"></div>
+</div>
+<script>
+  function calculate() {
+    var x = parseFloat(document.getElementById('x').value);
+    var y = parseFloat(document.getElementById('y').value);
+
+    var increaseToX = x ** y; // X increase to Y
+    var product = x * y; // Product of X and Y
+    var remainder = x % y; // Remainder of X divided by Y
+    var isEqual = x === y; // Check if X and Y are equal
+
+    var result = `
+      <p>X increase to Y: ${increaseToX}</p>
+      <p>Product of X and Y: ${product}</p>
+      <p>Remainder of X / Y: ${remainder}</p>
+      <p>X and Y are ${isEqual ? 'equal' : 'not equal'}</p>
+    `;
+
+    document.getElementById('result').innerHTML = result;
+  }
+</script>
+</body>
+</html>
